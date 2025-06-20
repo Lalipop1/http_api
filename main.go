@@ -1,9 +1,9 @@
 package main
 
 import (
-	"internal/handlers"
-	"internal/services"
-	"internal/storage"
+	"http_api/internal/handlers"
+	"http_api/internal/services"
+	"http_api/internal/storage"
 	"log"
 	"net/http"
 )

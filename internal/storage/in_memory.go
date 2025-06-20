@@ -2,7 +2,7 @@ package storage
 
 import (
 	"errors"
-	"internal/models"
+	"http_api/internal/models"
 	"sync"
 )
 

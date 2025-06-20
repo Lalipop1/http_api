@@ -2,12 +2,22 @@ package services
 
 import (
 	"context"
+	"encoding/hex"
 	"fmt"
-	"internal/models"
-	"internal/storage"
+	"http_api/internal/models"
+	"http_api/internal/storage"
 	"math/rand"
 	"time"
 )
+
+func generateID() string {
+	b := make([]byte, 8)
+	if _, err := rand.Read(b); err != nil {
+		// В случае ошибки используем timestamp как fallback
+		return fmt.Sprintf("%x", time.Now().UnixNano())
+	}
+	return hex.EncodeToString(b)
+}
 
 type TaskService struct {
 	storage storage.TaskStorage
